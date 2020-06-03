@@ -3,6 +3,7 @@ install: true
 os: linux
 jdk:
 - openjdk11
+- openjdk13
 script:
 - "./gradlew clean test"
 env:
