@@ -32,8 +32,8 @@ class ProductsPactTest {
   public void setupTestTarget(PactVerificationContext context) {
     context.setTarget(new HttpTestTarget("localhost", 8080));
 
-    System.setProperty("pact.provider.tag", "dev");
-    System.setProperty("pact.provider.version", "0.0.0");
+    System.setProperty("pact.provider.version", System.getenv("TRAVIS_COMMIT") == null ? "" : System.getenv("TRAVIS_COMMIT"));
+    System.setProperty("pact.provider.tag", System.getenv("TRAVIS_BRANCH") == null ? "" : System.getenv("TRAVIS_BRANCH"));
     System.setProperty("pact.verifier.publishResults", System.getenv("PACT_BROKER_PUBLISH_VERIFICATION_RESULTS") == null ? "false" : "true");
   }
 
@@ -45,11 +45,13 @@ class ProductsPactTest {
 
   @State("a product with ID 10 exists")
   public void setupProductX010000021() throws IOException {
+    System.out.println("a product with ID 10 exists");
     repository.save(new Product(10L, "test", "product description"));
   }
 
   @State("a product with ID 11 does not exist")
   public void setupProductX010000022() throws IOException {
+    System.out.println("a product with ID 11 does not exist");
     repository.deleteAll();
   }
 
