@@ -1,5 +1,5 @@
 PACTICIPANT := "pactflow-example-provider-springboot"
-WEBHOOK_UUID := "d60a66bb-af2e-439a-936d-af61e82865a7"
+WEBHOOK_UUID := "9GS-Z8nSAbUzvJW4xmhdsg"
 TRIGGER_PROVIDER_BUILD_URL := "https://api.travis-ci.com/repo/pactflow%2Fexample-provider-springboot/requests"
 
 # Only deploy from master
