@@ -35,14 +35,14 @@ class ProductController {
     return repository.save(newProduct);
   }
 
-  @GetMapping("/products/{id}")
+  @GetMapping("/product/{id}")
   Product one(@PathVariable Long id) {
 
     return repository.findById(id)
       .orElseThrow(() -> new ProductNotFoundException(id));
   }
 
-  @PutMapping("/products/{id}")
+  @PutMapping("/product/{id}")
   Product replaceProduct(@RequestBody Product newProduct, @PathVariable Long id) {
 
     return repository.findById(id)
@@ -57,7 +57,7 @@ class ProductController {
       });
   }
 
-  @DeleteMapping("/products/{id}")
+  @DeleteMapping("/product/{id}")
   void deleteProduct(@PathVariable Long id) {
     repository.deleteById(id);
   }
