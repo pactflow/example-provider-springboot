@@ -1,8 +1,6 @@
 package com.example.springboot;
 
 import java.util.List;
-
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,11 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@CrossOrigin(origins = {"*"})
-@RequestMapping(
-  value = "/",
-  produces = MediaType.APPLICATION_JSON_UTF8_VALUE
-)
+@CrossOrigin(origins = { "*" })
+@RequestMapping(value = "/", produces = "application/json; charset=utf-8")
 class ProductController {
 
   private final ProductRepository repository;
@@ -37,29 +32,26 @@ class ProductController {
     return repository.save(newProduct);
   }
 
-  @GetMapping({"/product/{id}", "/products/{id}"})
+  @GetMapping({ "/product/{id}" })
   Product one(@PathVariable Long id) {
 
-    return repository.findById(id)
-    .orElseThrow(() -> new ProductNotFoundException(id));
+    return repository.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
   }
 
-  @PutMapping({"/product/{id}", "/products/{id}"})
+  @PutMapping({ "/product/{id}" })
   Product replaceProduct(@RequestBody Product newProduct, @PathVariable Long id) {
 
-    return repository.findById(id)
-      .map(Product -> {
-        Product.setName(newProduct.getName());
-        Product.setType(newProduct.getType());
-        return repository.save(Product);
-      })
-      .orElseGet(() -> {
-        newProduct.setId(id);
-        return repository.save(newProduct);
-      });
+    return repository.findById(id).map(Product -> {
+      Product.setName(newProduct.getName());
+      Product.setType(newProduct.getType());
+      return repository.save(Product);
+    }).orElseGet(() -> {
+      newProduct.setId(id);
+      return repository.save(newProduct);
+    });
   }
 
-  @DeleteMapping({"/product/{id}", "/products/{id}"})
+  @DeleteMapping({ "/product/{id}" })
   void deleteProduct(@PathVariable Long id) {
     repository.deleteById(id);
   }
