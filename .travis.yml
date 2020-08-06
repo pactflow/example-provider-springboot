@@ -4,7 +4,7 @@ os: linux
 jdk:
 - openjdk11
 script:
-- "./gradlew clean test"
+- make ci
 env:
   global:
   - PACT_BROKER_PUBLISH_VERIFICATION_RESULTS=true
