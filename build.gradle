@@ -36,19 +36,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-pact {
-
-    broker {
-        pactBrokerUrl = System.getenv('PACT_BROKER_BASE_URL')
-        pactBrokerToken = System.getenv('PACT_BROKER_TOKEN')
-    }
-
-    serviceProviders {
-			"pactflow-example-provider" {
- 				fromPactBroker {
-        	selectors = latestTags('master') // specify your tags here. You can leave this out to just use the latest pacts
-      	}
-			}
-    }
-}
