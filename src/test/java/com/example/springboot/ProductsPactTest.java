@@ -1,9 +1,7 @@
 package com.example.springboot;
 
-import au.com.dius.pact.provider.junit.Provider;
-import au.com.dius.pact.provider.junit.State;
-import au.com.dius.pact.provider.junit.loader.PactBroker;
-import au.com.dius.pact.provider.junit.loader.PactBrokerAuth;
+import au.com.dius.pact.provider.junitsupport.*;
+import au.com.dius.pact.provider.junitsupport.loader.*;
 import au.com.dius.pact.provider.junit5.HttpTestTarget;
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
@@ -20,8 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Provider("pactflow-example-provider-springboot")
-@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}", tags = {"master", "prod"},
-  authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
+@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}", tags = {"master", "prod"}, providerTags = "master", enablePendingPacts = "true", authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
 class ProductsPactTest {
 
   @Autowired
