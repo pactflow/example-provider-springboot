@@ -41,7 +41,7 @@ class ProductsPactTest {
   @State("a product with ID 10 exists")
   public void setupProductX010000021() throws IOException {
     System.out.println("a product with ID 10 exists");
-    repository.save(new Product(10L, "test", "product description"));
+    repository.save(new Product(10L, "test", "product description", "1.0.0"));
   }
 
   @State("a product with ID 11 does not exist")
@@ -53,7 +53,7 @@ class ProductsPactTest {
   @State("products exist")
   public void setupProducts() throws IOException {
     System.out.println("a product with ID 11 does not exist");
-    repository.save(new Product(10L, "test", "product description"));
+    repository.save(new Product(10L, "test", "product description", "1.0.0"));
   }
 
 }

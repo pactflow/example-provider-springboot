@@ -14,12 +14,14 @@ class Product {
   private @Id Long id;
   private String name;
   private String type;
+  private String version;
 
   Product() {}
 
-  Product(Long id, String name, String type) {
+  Product(Long id, String name, String type, String version) {
     this.id = id;
     this.name = name;
     this.type = type;
+    this.version = version;
   }
 }
