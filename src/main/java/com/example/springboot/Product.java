@@ -20,7 +20,7 @@ class Product {
 
   Product(Long id, String name, String type, String version) {
     this.id = id;
-    this.name = name;
+    // this.name = name;
     this.type = type;
     this.version = version;
   }
