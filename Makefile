@@ -1,6 +1,8 @@
 PACTICIPANT := "pactflow-example-provider-springboot"
 WEBHOOK_UUID := "9GS-Z8nSAbUzvJW4xmhdsg"
 TRIGGER_PROVIDER_BUILD_URL := "https://api.travis-ci.com/repo/pactflow%2Fexample-provider-springboot/requests"
+PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli"
+
 
 # Only deploy from master
 ifeq ($(TRAVIS_BRANCH),master)
@@ -48,35 +50,19 @@ test: .env
 ## Deploy tasks
 ## =====================
 
-deploy: can_i_deploy deploy_app tag_as_prod
+deploy: can_i_deploy deploy_app record_deployment
 
 no_deploy:
 	@echo "Not deploying as not on master branch"
 
 can_i_deploy: .env
-	@docker run --rm \
-	 --env-file .env \
-	 -e PACT_BROKER_BASE_URL \
-	 -e PACT_BROKER_TOKEN \
-	  pactfoundation/pact-cli:latest \
-	  broker can-i-deploy \
-	  --pacticipant ${PACTICIPANT} \
-	  --version ${TRAVIS_COMMIT} \
-	  --to prod
+	@"${PACT_CLI}" broker can-i-deploy --pacticipant ${PACTICIPANT} --version ${TRAVIS_COMMIT} --to prod
 
 deploy_app:
 	@echo "Deploying to prod"
 
-tag_as_prod:
-	@docker run --rm \
-	 --env-file .env \
-	 -e PACT_BROKER_BASE_URL \
-	 -e PACT_BROKER_TOKEN \
-	  pactfoundation/pact-cli:latest \
-	  broker create-version-tag \
-	  --pacticipant ${PACTICIPANT} \
-	  --version ${TRAVIS_COMMIT} \
-	  --tag prod
+record_deployment:
+	@"${PACT_CLI}" broker record_deployment --pacticipant ${PACTICIPANT} --version ${TRAVIS_COMMIT} --environment production
 
 ## =====================
 ## Pactflow set up tasks
