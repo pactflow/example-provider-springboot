@@ -36,7 +36,6 @@ Please ensure the following environment variables have been exported in the proc
 ```
 export PACT_BROKER_TOKEN=<your pactflow read/write token here>
 export PACT_BROKER_BASE_URL=https://<your pactflow subdomain>.pactflow.io
-export PACT_BROKER_HOST=<your pactflow subdomain>.pactflow.io
 ```
 
 You can run the tests locally with:

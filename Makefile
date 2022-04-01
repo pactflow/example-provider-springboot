@@ -67,10 +67,6 @@ record_deployment:
 ## Pactflow set up tasks
 ## =====================
 
-## =====================
-## Pactflow set up tasks
-## =====================
-
 # export the GITHUB_TOKEN environment variable before running this
 create_github_token_secret:
 	curl -v -X POST ${PACT_BROKER_BASE_URL}/secrets \
@@ -95,7 +91,6 @@ create_or_update_pact_changed_webhook:
 
 test_pact_changed_webhook:
 	@curl -v -X POST ${PACT_BROKER_BASE_URL}/webhooks/${PACT_CHANGED_WEBHOOK_UUID}/execute -H "Authorization: Bearer ${PACT_BROKER_TOKEN}"
-
 
 ## ======================
 ## Misc
