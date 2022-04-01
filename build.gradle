@@ -38,9 +38,9 @@ test {
 	useJUnitPlatform()
 
 	// These properties need to be set on the test JVM process
-	systemProperty("pact.provider.version", System.getenv("GIT_COMMIT") == null ? "" : System.getenv("GIT_COMMIT"))
-	systemProperty("pact.provider.tag", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
-	systemProperty("pact.verifier.publishResults", System.getenv("PACT_BROKER_PUBLISH_VERIFICATION_RESULTS") == null ? "false" : "true")
+	environment("pact.provider.version", System.getenv("GIT_COMMIT") == null ? "" : System.getenv("GIT_COMMIT"))
+	environment("pact.provider.tag", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
+	environment("pact.verifier.publishResults", System.getenv("PACT_BROKER_PUBLISH_VERIFICATION_RESULTS") == null ? "false" : "true")
 	environment "PACT_BROKER_BASE_URL", System.getenv("PACT_BROKER_BASE_URL")
 	environment "PACT_BROKER_TOKEN", System.getenv("PACT_BROKER_TOKEN")
 
