@@ -18,7 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Provider("pactflow-example-provider-springboot")
-@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}", tags = { "master",
+@PactBroker(scheme = "https", host = "${PACT_BROKER_BASE_URL}", tags = { "master",
     "prod" }, providerTags = "master", enablePendingPacts = "true", authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
 class ProductsPactTest {
 
