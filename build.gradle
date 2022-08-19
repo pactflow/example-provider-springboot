@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
-  id "au.com.dius.pact" version "4.1.11"
+  id "au.com.dius.pact" version "4.1.39"
 }
 
 group = 'com.example'
@@ -22,9 +22,9 @@ configurations {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	testCompile 'au.com.dius.pact.provider:junit:4.1.30'
-	testCompile 'au.com.dius.pact.provider:junit5:4.1.30'
-	testCompile 'au.com.dius.pact.provider:spring:4.1.30'
+	testCompile 'au.com.dius.pact.provider:junit:4.1.39'
+	testCompile 'au.com.dius.pact.provider:junit5:4.1.39'
+	testCompile 'au.com.dius.pact.provider:spring:4.1.39'
 
 	runtimeOnly 'com.h2database:h2'
   compileOnly 'org.projectlombok:lombok'
