@@ -9,11 +9,11 @@
 [![Pact Status](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest/prod/badge.svg)](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest/prod) (prod/prod pact)
 
 
-This is an example of a Java Spring Boot provider that uses Pact, [Pactflow](https://pactflow.io) and GitHub Actions to ensure that it is compatible with the expectations its consumers have of it.
+This is an example of a Java Spring Boot provider that uses Pact, [PactFlow](https://pactflow.io) and GitHub Actions to ensure that it is compatible with the expectations its consumers have of it.
 
 The project uses a Makefile to simulate a very simple build pipeline with two stages - test and deploy.
 
-It is using a public tenant on Pactflow, which you can access [here](https://test.pactflow.io) using the credentials `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`/`O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
+It is using a public tenant on PactFlow, which you can access [here](https://test.pactflow.io) using the credentials `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`/`O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
 
 ## Project Phases
 
@@ -30,13 +30,13 @@ The project uses a Makefile to simulate a very simple build pipeline with two st
 ## Dependencies
 
 - Docker
-- A [Pactflow](https://pactflow.io) account
-- A [read/write API Token](https://docs.pactflow.io/#configuring-your-api-token) from your Pactflow account
+- A [PactFlow](https://pactflow.io) account
+- A [read/write API Token](https://docs.pactflow.io/#configuring-your-api-token) from your PactFlow account
 - Java 8+ installed
 
 ## Usage
 
-See the [Pactflow CI/CD Workshop](https://github.com/pactflow/ci-cd-workshop).
+See the [PactFlow CI/CD Workshop](https://github.com/pactflow/ci-cd-workshop).
 
 The below commands are designed for a Linux/OSX environment, please translate for use on Windows/PowerShell as necessary:
 
