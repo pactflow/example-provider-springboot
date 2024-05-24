@@ -39,7 +39,7 @@ test {
 
 	// These properties need to be set on the test JVM process
 	systemProperty("pact.provider.version", System.getenv("GIT_COMMIT") == null ? "" : System.getenv("GIT_COMMIT"))
-	systemProperty("pact.provider.tag", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
+	// systemProperty("pact.provider.tag", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
 	systemProperty("pact.provider.branch", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
 	systemProperty("pactbroker.consumerversionselectors.rawjson", "[{\"mainBranch\":true}]")
 	systemProperty("pact.verifier.publishResults", System.getenv("PACT_BROKER_PUBLISH_VERIFICATION_RESULTS") == null ? "false" : "true")
