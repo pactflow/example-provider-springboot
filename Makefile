@@ -31,7 +31,7 @@ fake_ci: .env
 	make ci
 
 ci_webhook: .env
-	./gradlew pactVerify -Ppact.filter.pacturl=$$PACT_URL
+	./gradlew clean test -i
 
 fake_ci_webhook:
 	CI=true \
@@ -45,7 +45,7 @@ fake_ci_webhook:
 ## =====================
 
 test: .env
-	./gradlew clean pactVerify -i
+	./gradlew clean test -i
 
 ## =====================
 ## Deploy tasks
