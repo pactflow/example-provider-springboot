@@ -38,6 +38,8 @@ The project uses a Makefile to simulate a very simple build pipeline with two st
 
 See the [PactFlow CI/CD Workshop](https://github.com/pactflow/ci-cd-workshop).
 
+>_Note:_ This repository is designed, out the box to work with the [`example-consumer-java-junit`](https://github.com/pactflow/example-consumer-java-junit) project, which specifies the provider it depends on, as the one named in this repository (`pactflow-example-provider-springboot`). If you are using another consumer example such as the [`pactflow-example-consumer`](https://github.com/pactflow/example-consumer) repo, you should do one of the following in your consumer project, either override the environment variable `PACT_PROVIDER=pactflow-example-provider-springboot` or update [the test](https://github.com/pactflow/example-consumer/blob/master/src/api.pact.spec.js#L9) to specify the correct provider name.
+
 The below commands are designed for a Linux/OSX environment, please translate for use on Windows/PowerShell as necessary:
 
 Please ensure the following environment variables have been exported in the process that you run the tests (generally a terminal):
