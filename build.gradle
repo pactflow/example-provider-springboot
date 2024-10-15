@@ -44,8 +44,13 @@ test {
 
 
 	// required variables for fetching dynamic pacts, & publishing verification results
+	// application version to associate with the code being tested, should be unique if contract changes
 	systemProperty("pact.provider.version", System.getenv("GIT_COMMIT") == null ? "" : System.getenv("GIT_COMMIT"))
-	// systemProperty("pact.provider.branch", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
+
+	// used in consumer version selectors, and fetching pending pacts
+	systemProperty("pactbroker.providerBranch", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
+	// used when publishing results with a branch associated with the version
+	systemProperty("pact.provider.branch", System.getenv("GIT_BRANCH") == null ? "" : System.getenv("GIT_BRANCH"))
 	
 	// only publish verification results from CI allowing developers to run tests locally and debug, without affecting broker results
 	// only verification results from a known source (such at a commit in a VCS and a reproducible environment such as CI) should be published
