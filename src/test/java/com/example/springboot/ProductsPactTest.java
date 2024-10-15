@@ -19,8 +19,26 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Provider("pactflow-example-provider-springboot")
 @AllowOverridePactUrl
-@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}",providerBranch = "${GIT_COMMIT}", authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
+@PactBroker(
+  scheme = "https", 
+  host = "${PACT_BROKER_HOST}", 
+  authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"),
+  providerBranch = "${GIT_BRANCH}",
+  enablePendingPacts = "true"
+  )
 class ProductsPactTest {
+
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    // Consumer version selectors for dynamically fetching pacts
+    // https://docs.pact.io/implementation_guides/jvm/provider/junit#selecting-the-pacts-to-verify-with-consumer-version-selectors-4314
+    // Runs when the provider code changes    
+    return new SelectorBuilder()
+      .deployedOrReleased()
+      .matchingBranch()
+      .mainBranch()
+      ;
+  }
 
   @Autowired
   ProductRepository repository;
