@@ -19,7 +19,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Provider("pactflow-example-provider-springboot")
 @AllowOverridePactUrl
-@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}",providerBranch = "${GIT_COMMIT}", authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
+@PactBroker(scheme = "https", host = "${PACT_BROKER_HOST}",providerBranch = "${GIT_BRANCH}", authentication = @PactBrokerAuth(token = "${PACT_BROKER_TOKEN}"))
 class ProductsPactTest {
 
   @Autowired
