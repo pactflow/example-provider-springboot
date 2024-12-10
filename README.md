@@ -8,7 +8,7 @@ This is an example of a Java Spring Boot provider that uses Pact, [PactFlow](htt
 
 The project uses a Makefile to simulate a very simple build pipeline with two stages - test and deploy.
 
-It is using a public tenant on PactFlow, which you can access [here](https://test.pactflow.io) using the credentials `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`/`O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
+It is using a public tenant on PactFlow, which you can access [here](https://testdemo.pactflow.io) using the credentials `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`/`O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
 
 ## Project Phases
 

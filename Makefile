@@ -103,4 +103,4 @@ test_contract_requiring_verification_published_webhook:
 
 schema-test:
 	# @./node_modules/.bin/swagger-mock-validator ./oas/swagger.yml ../example-consumer-cypress/pacts/example-cypress-consumer-pactflow-example-provider.json
-	./node_modules/.bin/swagger-mock-validator --user dXfltyFMgNOFZAxr8io9wJ37iUpY42M:O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1 --tag master --provider pactflow-example-provider ./oas/swagger.yml https://test.pactflow.io
+	./node_modules/.bin/swagger-mock-validator --user dXfltyFMgNOFZAxr8io9wJ37iUpY42M:O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1 --tag master --provider pactflow-example-provider ./oas/swagger.yml https://testdemo.pactflow.io
