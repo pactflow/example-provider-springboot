@@ -1,13 +1,8 @@
 # Example Java Spring Boot Provider
 
-![Build](https://github.com/pactflow/example-provider-springboot/workflows/Build/badge.svg)
+[![Build](https://github.com/pactflow/example-provider-springboot/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/example-provider-springboot/actions/workflows/build.yml)
 
-[![Can I deploy Status](https://test.pactflow.io/pacticipants/pactflow-example-provider-springboot/branches/master/latest-version/can-i-deploy/to-environment/production/badge.svg)](https://test.pactflow.io/overview/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit)
-
-[![Pact Status](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest/badge.svg)](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest) (latest pact)
-
-[![Pact Status](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest/prod/badge.svg)](https://test.pactflow.io/pacts/provider/pactflow-example-provider-springboot/consumer/pactflow-example-consumer-java-junit/latest/prod) (prod/prod pact)
-
+![Can I Deploy](https://testdemo.pactflow.io/pacticipants/pactflow-example-provider-springboot/branches/master/latest-version/can-i-deploy/to-environment/production/badge)
 
 This is an example of a Java Spring Boot provider that uses Pact, [PactFlow](https://pactflow.io) and GitHub Actions to ensure that it is compatible with the expectations its consumers have of it.
 
