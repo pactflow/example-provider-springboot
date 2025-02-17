@@ -24,7 +24,7 @@ configurations {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	testImplementation 'au.com.dius.pact.provider:junit:4.5.13'
+	testImplementation 'au.com.dius.pact.provider:junit:4.6.17'
 	testImplementation 'au.com.dius.pact.provider:junit5:4.5.13'
 	testImplementation 'au.com.dius.pact.provider:spring6:4.5.13'
 
